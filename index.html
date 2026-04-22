@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,600;0,700;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background: #080809;
+      color: #EAE6DE;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Grain texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+    }
+
+    /* Subtle warm glow at bottom center — matches reference */
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 360px;
+      background: radial-gradient(ellipse at center, rgba(180, 30, 20, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Thin frame border */
+    .frame {
+      position: fixed;
+      inset: 24px;
+      border: 1px solid rgba(234, 230, 222, 0.08);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Center stage */
+    .center {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      padding: 40px 20px;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    /* Small red accent dot */
+    .dot {
+      width: 6px;
+      height: 6px;
+      background: #C0281F;
+      border-radius: 50%;
+      margin: 0 auto 52px;
+      box-shadow: 0 0 12px rgba(192, 40, 31, 0.6);
+    }
+
+    /* Main heading — massive, bold serif */
+    h1 {
+      font-family: 'Cormorant', Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(52px, 9.5vw, 112px);
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: #EAE6DE;
+      line-height: 0.92;
+      margin-bottom: 40px;
+      /* Subtle text shadow for depth */
+      text-shadow:
+        0 2px 40px rgba(0, 0, 0, 0.6),
+        0 0 1px rgba(234, 230, 222, 0.3);
+    }
+
+    /* Thin divider */
+    .divider {
+      width: 32px;
+      height: 1px;
+      background: rgba(234, 230, 222, 0.2);
+      margin: 0 auto 36px;
+    }
+
+    /* Tagline */
+    .tagline {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(16px, 1.8vw, 22px);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.03em;
+      color: rgba(234, 230, 222, 0.45);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="frame"></div>
+
+  <div class="center">
+    <div class="dot"></div>
+    <h1>Website<br>Coming Soon</h1>
+    <div class="divider"></div>
+    <p class="tagline">The missing piece to your business's success.</p>
+  </div>
+
+</body>
+</html>

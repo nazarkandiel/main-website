@@ -71,6 +71,27 @@
       width: 100%;
     }
 
+    /* ── Keyframes ── */
+    @keyframes revealUp {
+      from { transform: translateY(108%); }
+      to   { transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scaleDot {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes expandLine {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+
     /* Small red accent dot */
     .dot {
       width: 6px;
@@ -79,6 +100,7 @@
       border-radius: 50%;
       margin: 0 auto 52px;
       box-shadow: 0 0 12px rgba(192, 40, 31, 0.6);
+      animation: scaleDot 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
     }
 
     /* Main heading — massive, bold serif */
@@ -91,11 +113,25 @@
       color: #EAE6DE;
       line-height: 0.92;
       margin-bottom: 40px;
-      /* Subtle text shadow for depth */
       text-shadow:
         0 2px 40px rgba(0, 0, 0, 0.6),
         0 0 1px rgba(234, 230, 222, 0.3);
     }
+
+    /* Clip mask per line */
+    .line-wrap {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 0.06em;
+    }
+
+    .line-wrap .line {
+      display: block;
+      animation: revealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .line-wrap:nth-child(1) .line { animation-delay: 0.3s; }
+    .line-wrap:nth-child(2) .line { animation-delay: 0.52s; }
 
     /* Thin divider */
     .divider {
@@ -103,6 +139,8 @@
       height: 1px;
       background: rgba(234, 230, 222, 0.2);
       margin: 0 auto 36px;
+      transform-origin: center;
+      animation: expandLine 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
     }
 
     /* Tagline */
@@ -114,6 +152,7 @@
       letter-spacing: 0.03em;
       color: rgba(234, 230, 222, 0.45);
       line-height: 1.5;
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.05s both;
     }
 
     /* Social links */
@@ -124,6 +163,11 @@
       gap: 28px;
       margin-top: 48px;
     }
+
+    .socials a:nth-child(1) { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.25s both; }
+    .socials a:nth-child(2) { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.35s both; }
+    .socials a:nth-child(3) { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.45s both; }
+    .socials a:nth-child(4) { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.55s both; }
 
     .socials a {
       display: flex;
@@ -164,7 +208,10 @@
 
   <div class="center">
     <div class="dot"></div>
-    <h1>Website<br>Coming Soon</h1>
+    <h1>
+      <span class="line-wrap"><span class="line">Website</span></span>
+      <span class="line-wrap"><span class="line">Coming Soon</span></span>
+    </h1>
     <div class="divider"></div>
     <p class="tagline">The missing piece to your business's success.</p>
 

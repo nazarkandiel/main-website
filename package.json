@@ -1,0 +1,25 @@
+{
+  "name": "main-website",
+  "version": "1.0.0",
+  "description": "Coming soon landing page with Vercel Web Analytics",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node serve.mjs",
+    "start": "node serve.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nazarkandiel/main-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nazarkandiel/main-website/issues"
+  },
+  "homepage": "https://github.com/nazarkandiel/main-website#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
